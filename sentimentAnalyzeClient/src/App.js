@@ -74,9 +74,8 @@ renderTextArea = ()=>{
     ret = axios.get(url);
 
     ret.then((response,rejected)=>{
-      if(response){
-        this.setState({sentimentOutput:<EmotionTable emotions={response.data}/>});
-      }
+      if(rejected) return;
+      this.setState({sentimentOutput:<EmotionTable emotions={response.data}/>});
     });
   }
   

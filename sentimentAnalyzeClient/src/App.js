@@ -6,12 +6,13 @@ import axios from 'axios';
 
 class App extends React.Component {
   state = {innercomp:<textarea rows="4" cols="50" id="textinput"/>,
-            mode: "text",
-          sentimentOutput:[],
-          sentiment:true
-        }
-  
-  renderTextArea = ()=>{
+  mode: "text",
+  sentimentOutput:[],
+  sentiment:true
+}
+
+renderTextArea = ()=>{
+    
     document.getElementById("textinput").value = "";
     if(this.state.mode === "url") {
       this.setState({innercomp:<textarea rows="4" cols="50" id="textinput"/>,
@@ -81,6 +82,7 @@ class App extends React.Component {
   
 
   render() {
+    document.title = "Sentiment Analyzer";
     return (  
       <div className="App">
       <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
